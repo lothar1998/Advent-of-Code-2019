@@ -10,7 +10,7 @@ public class Day5 {
         executeOptCode(optCode);
     }
 
-    private static void executeOptCode(Integer[] optCode){
+    public static void executeOptCode(Integer[] optCode){
         int i = 0;
         int currentInstruction;
         int typeOfOperation;
@@ -89,7 +89,7 @@ public class Day5 {
         }while (i < optCode.length);
     }
 
-    private static Integer[] modeOfInstructionParameters(Integer[] splittedInstruction, int expectedNumberOfParameters){
+    public static Integer[] modeOfInstructionParameters(Integer[] splittedInstruction, int expectedNumberOfParameters){
         Integer[] modesOfInstructionParameters = new Integer[expectedNumberOfParameters];
 
 
@@ -113,19 +113,18 @@ public class Day5 {
         return modesOfInstructionParameters;
     }
 
-    private static int getValue(Integer[] optCode, int index, int mode){
+    public static int getValue(Integer[] optCode, int index, int mode){
         if(mode == 0)
             return optCode[optCode[index]];
         else
             return optCode[index];
     }
 
-    private static void saveValue(Integer[] optCode, int index, int value){
+    public static void saveValue(Integer[] optCode, int index, int value){
         optCode[optCode[index]] = value;
     }
 
-
-    private static Integer[] parseCommandsToInteger(String[] commands){
+    public static Integer[] parseCommandsToInteger(String[] commands){
         Integer[] simpleCommands = new Integer[commands.length];
 
         for(int i = 0; i < commands.length; i++)
@@ -134,7 +133,7 @@ public class Day5 {
         return simpleCommands;
     }
 
-    private static Integer[] getDigitsFromNumber(int number){
+    public static Integer[] getDigitsFromNumber(int number){
         int n = getNumbersOfDigitsInInteger(number);
 
         int temp;
@@ -148,7 +147,7 @@ public class Day5 {
         return result;
     }
 
-    private static int getNumbersOfDigitsInInteger(int number){
+    public static int getNumbersOfDigitsInInteger(int number){
         int n = 0;
         do{
             if((number / (int)Math.pow(10, n)) <= 0)
